@@ -1,0 +1,16 @@
+
+    # file.write(docx)
+    # file.write("\n")
+    # file.write("{}: {} {}".format(Key1, Key1_count, "\n"))
+    # file.write("{}: {} {}".format(Key2, Key2_count, "\n"))
+    # file.write("{}: {} {}".format(Key3, Key3_count, "\n"))
+    # file.write("{}: {} {}".format(Key4, Key4_count, "\n"))
+    # file.write("{}: {} {}".format(Key5, Key5_count, "\n"))
+    # file.write("{}: {} {}".format(Key6, Key6_count, "\n"))
+    # file.write("{}: {} {}".format(Key7, Key7_count, "\n"))
+    # file.write("{}: {} {}".format(Key8, Key8_count, "\n"))
+    # file.write("{}: {} {}".format(key9, Key9_count, "\n"))
+    # file.write("{}: {} {}".format(key10, Key10_count, "\n"))
+    # file.write("{}: {} {}".format(Key11, Key11_count, "\n"))
+
+    # file.write("\n\n")
