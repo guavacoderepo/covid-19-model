@@ -36,19 +36,27 @@ for doc in all_docx:
 # variable declaratio
 Key1 = "machine learning"
 Key11 = "machine"
-Key2 = "scale-free"
+
+Key2 = "scale-free"  # one
 Key22 = "scale free"
+
 Key3 = "power-law"
 Key33 = "power law"
+
 Key4 = "complex network"
 Key5 = "modeling"
-Key6 = "epidemic"
+
+Key6 = "epidemic dyna"  # two
+
 Key7 = "economic outcomes"
-Key77 = "economic"
-Key8 = "china"
-key9 = "covid"
+Key77 = "econom"
+
+Key8 = "china"  # four
+
+key9 = "covid"  # five
+key99 = "pandemic"
+
 key10 = "government"
-Key11 = "economic policy"
 
 
 # variable declaratio
@@ -83,7 +91,6 @@ for docx in doc_array:
     Key8_count = 0
     Key9_count = 0
     Key10_count = 0
-    Key11_count = 0
 
 
 # Read text from file
@@ -99,27 +106,38 @@ for docx in doc_array:
     # keyword context search
         if Key1 in text or Key11 in text:
             Key1_count = Key1_count + text.count(Key1)
+
         if Key2 in text or Key22 in text:
-            Key2_count = Key2_count + text.count(Key2)
+            Key2_count = Key2_count + text.count(Key2)  # one
+
         if Key3 in text or Key33 in text:
             Key3_count = Key3_count + text.count(Key3)
+
         if Key4 in text:
             Key4_count = Key4_count + text.count(Key4)
+
         if Key5 in text:
             Key5_count = Key5_count + text.count(Key5)
+
         if Key6 in text:
-            Key6_count = Key6_count + text.count(Key6)
+            Key6_count = Key6_count + text.count(Key6)  # two
+
         if Key7 in text or Key77 in text:
-            Key7_count = Key7_count + text.count(Key7)
+            Key7_count = Key7_count + text.count(Key7)  # three
+
         if Key8 in text:
-            Key8_count = Key8_count + text.count(Key8)
-        if key9 in text:
-            Key9_count = Key9_count + text.count(key9)
+            Key8_count = Key8_count + text.count(Key8)  # four
+
+        if key9 in text or key99 in text:
+            Key9_count = Key9_count + text.count(key9)  # five
+
         if key10 in text:
             Key10_count = Key10_count + text.count(key10)
-        if Key11 in text:
-            Key11_count = Key11_count + text.count(Key11)
 
+# check if main keywords in data
+    if Key2_count < 1 or Key8_count < 1 or Key9_count < 1:
+        print("keywords not found")
+        continue
 
 # CREATE A CSV FILE FOR OUR MODEL
 
@@ -138,10 +156,8 @@ for docx in doc_array:
     china.append(int(Key8_count))
     covid.append(int(Key9_count))
     government.append(int(Key10_count))
-    policy.append(int(Key11_count))
 
     id += 1
-print(china)
 
 
 dataset = {
@@ -157,7 +173,7 @@ dataset = {
     Key8: china,
     key9: covid,
     key10: government,
-    Key11: policy
+
 }
 df = pd.DataFrame(dataset)
 df.to_csv("dataset.csv")

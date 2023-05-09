@@ -6,10 +6,16 @@ import seaborn as sns
 df = pd.read_csv("dataset.csv")
 
 df = df.drop(['s/n'], axis=1)
+df = df.drop(['doc_index'], axis=1)
+
 
 # print(df.head)
-
+sns.set(style='whitegrid')
 # print(df.head)
-sns.catplot(df, x="doc_index", kind="bar")
+# sns.barplot(df)
+
+sns.histplot(df)
+
+
 # plt.hist(df)
 plt.show()
