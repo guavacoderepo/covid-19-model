@@ -16,7 +16,7 @@ doc_array = []
 # get current working dir
 cwd = os.getcwd()
 # set data model path
-data_dir = os.path.join(cwd, "data")
+data_dir = os.path.join(cwd, "documents")
 # get all pdf files in folder
 all_docx = os.listdir(data_dir)
 
@@ -46,9 +46,9 @@ Key33 = "power law"
 Key4 = "complex network"
 Key5 = "modeling"
 
-Key6 = "epidemic dyna"  # two
+Key6 = "epidemic"  # two
 
-Key7 = "economic outcomes"
+Key7 = "economic"
 Key77 = "econom"
 
 Key8 = "china"  # four
@@ -146,12 +146,12 @@ for docx in doc_array:
 
     documents.append(os.path.basename(docx).split('/')[-1])
     index.append(id)
-    machine.append(int(Key1_count))
+    # machine.append(int(Key1_count))
     scale_free.append(int(Key2_count))
-    power_law.append(int(Key3_count))
-    complex_network.append(int(Key4_count))
-    modeling.append(int(Key5_count))
-    epidemic.append(int(Key6_count))
+    # power_law.append(int(Key3_count))
+    # complex_network.append(int(Key4_count))
+    # modeling.append(int(Key5_count))
+    # epidemic.append(int(Key6_count))
     economic.append(int(Key7_count))
     china.append(int(Key8_count))
     covid.append(int(Key9_count))
@@ -163,12 +163,12 @@ for docx in doc_array:
 dataset = {
     "document": documents,
     "doc_index": index,
-    Key1: machine,
+    # Key1: machine,
     Key2: scale_free,
-    Key3: power_law,
-    Key4: complex_network,
-    Key5: modeling,
-    Key6: epidemic,
+    # Key3: power_law,
+    # Key4: complex_network,
+    # Key5: modeling,
+    # Key6: epidemic,
     Key7: economic,
     Key8: china,
     key9: covid,
