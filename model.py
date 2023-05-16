@@ -13,8 +13,9 @@ df = df.drop(['doc_index'], axis=1)
 sns.set(style='whitegrid')
 # print(df.head)
 # sns.barplot(df)
-
-sns.histplot(df)
+# sns.scatterplot(df)
+sns.heatmap(df)
+# sns.histplot(df)
 
 
 # plt.hist(df)

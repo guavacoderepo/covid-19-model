@@ -145,7 +145,6 @@ for docx in doc_array:
     # create index for document
 
     documents.append(os.path.basename(docx).split('/')[-1])
-    index.append(id)
     # machine.append(int(Key1_count))
     scale_free.append(int(Key2_count))
     # power_law.append(int(Key3_count))
@@ -162,7 +161,6 @@ for docx in doc_array:
 
 dataset = {
     "document": documents,
-    "doc_index": index,
     # Key1: machine,
     Key2: scale_free,
     # Key3: power_law,
