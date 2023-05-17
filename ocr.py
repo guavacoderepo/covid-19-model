@@ -75,7 +75,7 @@ policy = []
 index = []
 
 # document id
-id = 0
+id = 1
 
 file = open('myfile.txt', 'w')
 
@@ -135,7 +135,7 @@ for docx in doc_array:
             Key10_count = Key10_count + text.count(key10)
 
 # check if main keywords in data
-    if Key2_count < 1 or Key8_count < 1 or Key9_count < 1:
+    if Key2_count < 1 or Key8_count < 1 or Key9_count < 1 or Key1_count < 1:
         print("keywords not found")
         continue
 
@@ -145,36 +145,38 @@ for docx in doc_array:
     # create index for document
 
     documents.append(os.path.basename(docx).split('/')[-1])
-    # machine.append(int(Key1_count))
+    machine.append(int(Key1_count))
     scale_free.append(int(Key2_count))
     # power_law.append(int(Key3_count))
     # complex_network.append(int(Key4_count))
     # modeling.append(int(Key5_count))
     # epidemic.append(int(Key6_count))
-    economic.append(int(Key7_count))
+    # economic.append(int(Key7_count))
     china.append(int(Key8_count))
     covid.append(int(Key9_count))
-    government.append(int(Key10_count))
+    index.append(id)
+    # government.append(int(Key10_count))
 
     id += 1
 
 
 dataset = {
+    "index": index,
     "document": documents,
-    # Key1: machine,
+    Key1: machine,
     Key2: scale_free,
     # Key3: power_law,
     # Key4: complex_network,
     # Key5: modeling,
     # Key6: epidemic,
-    Key7: economic,
+    # Key7: economic,
     Key8: china,
     key9: covid,
-    key10: government,
+    # key10: government,
 
 }
 df = pd.DataFrame(dataset)
-df.to_csv("dataset.csv")
+df.to_csv("dataset.csv", index=False)
 
 print(dataset)
 
